@@ -11,17 +11,17 @@ Welcome to the DSA GitHub repository! This repository contains implementations o
 
 In this section, you'll find implementations of different searching techniques:
 
-- [Linear Search](Searching%20Techniques/LinearSearch/readme.md)
-- [Binary Search](Searching%20Techniques/BinarySearch/readme.md)
+- <a href="https://github.com/DhavalBhimani44/DSA/blob/master/linearsearch.md"> Linear Search</a>
+- <a href="https://github.com/DhavalBhimani44/DSA/blob/master/binarysearch.md"> Binary Search</a>
 
 ## Sorting Techniques
 
 This section contains various sorting techniques implemented in different files:
 
-- [Bubble Sort](Sorting%20Techniques/BubbleSort/readme.md)
-- [Insertion Sort](Sorting%20Techniques/InsertionSort/readme.md)
-- [Selection Sort](Sorting%20Techniques/SelectionSort/readme.md)
-- [Quick Sort](Sorting%20Techniques/QuickSort/readme.md)
-- [Merge Sort](Sorting%20Techniques/MergeSort/readme.md)
+- <a href="https://github.com/DhavalBhimani44/DSA/blob/master/bubblesort.md"> Bubble Sort</a>
+- <a href="https://github.com/DhavalBhimani44/DSA/blob/master/insertionsort.md"> Insertion Sort</a>
+- <a href="https://github.com/DhavalBhimani44/DSA/blob/master/selectionsort.md"> Selection Sort</a>
+- <a href="https://github.com/DhavalBhimani44/DSA/blob/master/quicksort.md"> Quick Sort</a>
+- <a href="https://github.com/DhavalBhimani44/DSA/blob/master/mergesort.md"> Merge Sort</a>
 
 Feel free to explore the code in this repository to learn and understand these searching and sorting techniques better. Happy coding!
