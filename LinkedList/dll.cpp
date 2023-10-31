@@ -2,33 +2,33 @@
 using namespace std;
 
 class Node { 
-    public:
-        int data;
-        Node *next;
-        Node *previous;
+public:
+    int data;
+    Node *next;
+    Node *previous;
 };
 
 class List {
     Node *head, *temp;
 
-    public:
-        List();
-        void create();
-        void display();
-        void insertAtStart(int value);
-        void insertAtEnd(int value);
-        void insertAtIntermediate(int position, int value);
-        void deleteatstart();
-        void deleteatend();
-        void deleteatposition(int position);
-        void deleteanelement(int value);
-        void reverse();
+public:
+    List(){
+        head = NULL;
+        temp = NULL;
+    };
+    void create();
+    void display();
+    void insertAtStart(int value);
+    void insertAtEnd(int value);
+    void insertAtIntermediate(int position, int value);
+    void deleteatstart();
+    void deleteatend();
+    void deleteatposition(int position);
+    void deleteanelement(int value);
+    void reverse();
+    void concatenate(List &list2);
 };
 
-List::List() {
-    head = NULL;
-    temp = NULL;
-}
 
 void List::create() {
     int num;
@@ -45,12 +45,10 @@ void List::create() {
         newNode->data = value;
         newNode->next = NULL;
         newNode->previous = NULL;
-        if (head == NULL)
-        {
-            head = temp = newNode;
+        if (head == NULL){
+            head = temp =  newNode;
         }
-        else
-        {
+        else{
             temp->next = newNode;
             newNode->previous = temp;
             temp = newNode;
@@ -59,15 +57,13 @@ void List::create() {
 }
 
 void List::display() {
-    if (head == NULL)
-    {
+    if (head == NULL){
         cout << "List is empty." << endl;
         return;
     }
     cout << "NULL" << " <-> ";
     temp = head;
-    while (temp != NULL)
-    {
+    while (temp != NULL){
         cout << temp->data << " <-> ";
         temp = temp->next;
     }
@@ -75,7 +71,7 @@ void List::display() {
 }
 
 void List::insertAtStart(int value) {
-    Node *newNode = new Node;
+    Node* newNode = new Node;
     newNode->data = value;
 
     newNode->next = head;
@@ -88,12 +84,10 @@ void List::insertAtEnd(int value) {
     newNode->data = value;
     newNode->next = NULL;
 
-    if (head == NULL)
-    {
+    if (head == NULL){
         head = newNode;
     }
-    else
-    {
+    else{
         temp = head;
         while (temp->next != NULL)
         {
@@ -208,9 +202,22 @@ void List::reverse() {
     }
 }
 
+void List::concatenate(List &list2) {
+    if (head == nullptr) {
+        head = list2.head;
+    } else {
+        temp = head;
+        while (temp->next != nullptr) {
+            temp = temp->next;
+        }
+        temp->next = list2.head;
+        list2.head = nullptr;
+    }
+}
+
 
 int main() {
-    List list;
+    List list, list2;
     int choice;
     do
     {
@@ -223,8 +230,10 @@ int main() {
         cout << "6. Delete at Intermediate\n";
         cout << "7. Delete at start\n";
         cout << "8. Delete at end\n";
-        cout << "9. Delete any particular node\n";
+        cout << "9. Delete at Intermediate\n";
         cout << "10. Reverse List\n";
+        cout << "11. Create second list\n";
+        cout << "12. Concatenate lists\n";
         cout << "Enter your choice: ";
         cin >> choice;
 
@@ -295,10 +304,22 @@ int main() {
             cout << "List reversed." << endl;
             break;
         }
+        case 11:
+        {
+            list2.create();
+            break;
+        }
+        case 12:
+        {
+            list.concatenate(list2);
+            cout << "Concatenated list: ";
+            list.display();
+            break;
+        }
         default:
             cout << "Invalid choice.\n";
         }
-    } while (choice != 11);
+    } while (choice != 13);
 
     return 0;
 }
